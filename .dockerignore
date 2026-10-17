@@ -1,0 +1,10 @@
+.git
+.gitignore
+*.log
+backup/
+.env
+__pycache__/
+*.pyc
+tests/
+jenkins/
+report/

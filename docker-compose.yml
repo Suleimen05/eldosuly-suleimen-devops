@@ -1,0 +1,12 @@
+services:
+  student-app:
+    build: .
+    image: eldosuly-suleimen-devops
+    container_name: eldosuly-suleimen-container
+    environment:
+      STUDENT_NAME: Сүлеймен
+      STUDENT_SURNAME: Елдосұлы
+      STUDENT_GROUP: IT2-2310
+      STUDENT_ID: "38320"
+    ports:
+      - "8000:8000"
