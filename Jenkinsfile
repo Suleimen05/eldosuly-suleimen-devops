@@ -44,7 +44,7 @@ pipeline {
             steps {
                 sh '''
                     docker rm -f "$CONTAINER_NAME" 2>/dev/null || true
-                    docker run -d --name "$CONTAINER_NAME" \
+                    docker run -d --name "$CONTAINER_NAME" -p 8000:8000 \
                         -e STUDENT_NAME -e STUDENT_SURNAME \
                         -e STUDENT_GROUP -e STUDENT_ID \
                         "$IMAGE_NAME"
