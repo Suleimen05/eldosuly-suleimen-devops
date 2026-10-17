@@ -8,6 +8,17 @@ The repository is at https://github.com/Suleimen05/eldosuly-suleimen-devops. The
 
 Open PowerShell in the project folder. Docker Desktop must be running.
 
+On a new computer, create the Linux demonstration container once:
+
+```powershell
+docker run -d --name eldosuly-suleimen-linux alpine:3.20 sleep infinity
+docker exec eldosuly-suleimen-linux apk add --no-cache bash git procps findutils coreutils
+docker exec eldosuly-suleimen-linux mkdir -p /root/devops
+docker exec eldosuly-suleimen-linux git clone https://github.com/Suleimen05/eldosuly-suleimen-devops.git /root/devops/eldosuly_suleimen
+```
+
+These setup steps have already been completed on this computer.
+
 ```powershell
 docker start eldosuly-suleimen-linux
 docker exec -it eldosuly-suleimen-linux bash
@@ -134,8 +145,10 @@ Compose stores the container configuration in one file, so it is easier to start
 
 Jenkins is available at http://localhost:8080 when the local container is running. The job name is `Eldosuly_Suleimen_DevOps`. The local admin password is in `jenkins/.env`; keep that file private and do not show it in the video or report. The job reads `Jenkinsfile` from the public GitHub repository.
 
+On a new computer, first create `jenkins/.env` containing one line: `JENKINS_ADMIN_PASSWORD=` followed by a strong password you choose. This file is ignored by Git. On this computer it is already prepared. Sign in to Jenkins as `admin` with that local password.
+
 ```powershell
-docker compose --env-file jenkins/.env -f jenkins/docker-compose.yml up -d
+docker compose --env-file jenkins/.env -f jenkins/docker-compose.yml up -d --build
 docker ps --filter name=eldosuly-suleimen-jenkins
 ```
 
