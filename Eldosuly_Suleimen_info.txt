@@ -1,0 +1,5 @@
+Name: Сүлеймен
+Surname: Елдосұлы
+Group: IT2-2310
+Student ID: 38320
+Course: DevOps
