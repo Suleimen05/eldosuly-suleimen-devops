@@ -1,5 +1,7 @@
 # DevOps laboratory demonstration
 
+Пошаговая инструкция на русском для записи видео: [VIDEO_GUIDE_RU.md](VIDEO_GUIDE_RU.md).
+
 Student: Елдосұлы Сүлеймен, IT2-2310, Student ID 38320.
 
 The repository is at https://github.com/Suleimen05/eldosuly-suleimen-devops. The project directory in the Linux demonstration is `/root/devops/eldosuly_suleimen`. The Linux environment is the container named `eldosuly-suleimen-linux` on this computer.
